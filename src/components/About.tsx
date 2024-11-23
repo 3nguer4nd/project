@@ -13,7 +13,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold mb-4">About me</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
           I am still searching for my path, although things become clearer when I engage with IT or audiovisual arts.
           </p>
@@ -44,7 +44,7 @@ export default function About() {
             <Briefcase className="w-12 h-12 text-blue-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Experience</h3>
             <p className="text-gray-600">
-              Alternant depuis un an chez Magnum Event à Paris.
+            Work-study trainee since September 2023 at <strong>Magnum Event</strong> in Paris.
             </p>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function About() {
             <GraduationCap className="w-12 h-12 text-blue-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Education</h3>
             <p className="text-gray-600">
-              Etudiant en BTS Services Informatiques aux Organisations option A (Solutions d'Infrastructure, Systèmes et Réseaux)
+            Student in a BTS program for IT Services for Organizations, option A (Infrastructure Solutions, Systems, and Networks).
             </p>
           </motion.div>
         </div>
