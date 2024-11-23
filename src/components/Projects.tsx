@@ -26,9 +26,9 @@ const projects = [
     github: 'https://github.com',
     demo: 'https://example.com',
     tags: ['Ad skill', 'Ad skill', 'Ad skill']
-  }
+  },
   {
-    title: 'Addd title',
+    title: 'Ad title',
     description: 'Ad descriptive',
     image: 'https://images.unsplash.com/photo-1547954575-855750c57bd3?auto=format&fit=crop&q=80&w=800',
     github: 'https://github.com',
