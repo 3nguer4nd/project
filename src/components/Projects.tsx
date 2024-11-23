@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'E-Commerce Platform',
     description: 'A full-stack e-commerce solution built with React and Node.js',
-    image: '/public/images/img1.jpg',
+    image: '/images/img1.jpg',
     github: 'https://github.com',
     demo: 'https://enguerand-ca.fr',
     tags: ['React', 'Node.js', 'MongoDB']
