@@ -15,8 +15,7 @@ export default function About() {
         >
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            I'm a passionate developer with a strong foundation in modern web technologies.
-            I love creating elegant solutions to complex problems.
+          I am still searching for my path, although things become clearer when I engage with IT or audiovisual arts.
           </p>
         </motion.div>
 
@@ -45,7 +44,7 @@ export default function About() {
             <Briefcase className="w-12 h-12 text-blue-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Experience</h3>
             <p className="text-gray-600">
-              5+ years of experience in software development with a focus on web applications.
+              Alternant depuis un an chez Magnum Event à Paris.
             </p>
           </motion.div>
 
@@ -59,7 +58,7 @@ export default function About() {
             <GraduationCap className="w-12 h-12 text-blue-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Education</h3>
             <p className="text-gray-600">
-              Bachelor's in Computer Science with continuous learning through certifications.
+              Etudiant en BTS Services Informatiques aux Organisations option A (Solutions d'Infrastructure, Systèmes et Réseaux)
             </p>
           </motion.div>
         </div>
