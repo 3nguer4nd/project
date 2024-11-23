@@ -22,7 +22,7 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="https://github.com"
+            href="https://github.com/3nguer4nd"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors"
@@ -32,7 +32,7 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/enguérand-ca/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors"
@@ -42,7 +42,7 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="mailto:your.email@example.com"
+            href="mailto:enguerand.ca@gmail.com"
             className="text-gray-300 hover:text-white transition-colors"
           >
             <Mail size={24} />
