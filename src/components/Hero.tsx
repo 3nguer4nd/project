@@ -12,7 +12,7 @@ export default function Hero() {
         className="text-center"
       >
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Hi, I'm <span className="text-blue-400">Your Name</span>
+          Bonjour, je m'appelle <span className="text-blue-400">Enguérand CA</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8">
           Full Stack Developer | Problem Solver | Tech Enthusiast
