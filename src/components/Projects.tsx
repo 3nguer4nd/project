@@ -4,12 +4,12 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution built with React and Node.js',
+    title: 'Portfolio Creation',
+    description: 'Personal portfolio creation using Bolt.new',
     image: '/images/img1.jpg',
-    github: 'https://github.com',
+    github: 'https://github.com/3nguer4nd/project.git',
     demo: 'https://enguerand-ca.fr',
-    tags: ['React', 'Node.js', 'MongoDB']
+    tags: ['Website', 'AI', 'Programming language']
   },
   {
     title: 'Task Management App',
