@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'None', level: 0 },
-  { name: 'None', level: 0 },
+  { name: 'Programmation', level: 20 },
+  { name: 'Virtualisation', level: 40 },
   { name: 'None', level: 0 },
   { name: 'None', level: 0 },
   { name: 'None', level: 0 },
