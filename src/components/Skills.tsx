@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'React', level: 90 },
-  { name: 'TypeScript', level: 85 },
-  { name: 'Node.js', level: 80 },
-  { name: 'Python', level: 75 },
-  { name: 'AWS', level: 70 },
-  { name: 'Docker', level: 65 },
+  { name: 'Programmation', level: 30 },
+  { name: 'Virtualisation', level: 40 },
+  { name: 'None', level: 0 },
+  { name: 'None', level: 0 },
+  { name: 'None', level: 0 },
+  { name: 'None', level: 0 },
 ];
 
 export default function Skills() {
