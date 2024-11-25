@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'Programmation', level: 20 },
-  { name: 'Virtualisation', level: 40 },
-  { name: 'None', level: 0 },
-  { name: 'None', level: 0 },
-  { name: 'None', level: 0 },
-  { name: 'None', level: 0 },
+  { name: 'React', level: 90 },
+  { name: 'TypeScript', level: 85 },
+  { name: 'Node.js', level: 80 },
+  { name: 'Python', level: 75 },
+  { name: 'AWS', level: 70 },
+  { name: 'Docker', level: 65 },
 ];
 
 export default function Skills() {
@@ -36,8 +36,10 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="flex items-center mb-2">
-                <span className="text-lg font-medium w-24">{skill.name}</span>
+              <div className="flex items-center gap-4">
+                <div className="min-w-[120px] text-lg font-medium truncate">
+                  {skill.name}
+                </div>
                 <div className="flex-1 bg-gray-200 rounded-full h-4">
                   <motion.div
                     className="bg-blue-500 h-4 rounded-full"
@@ -47,7 +49,9 @@ export default function Skills() {
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                   />
                 </div>
-                <span className="ml-4 text-gray-600 w-12">{skill.level}%</span>
+                <div className="min-w-[48px] text-right text-gray-600">
+                  {skill.level}%
+                </div>
               </div>
             </motion.div>
           ))}
