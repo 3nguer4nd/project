@@ -83,7 +83,7 @@ const getRandomPosition = (index: number) => {
   
   // Rayon variable pour créer plusieurs "orbites"
   const radiusFactor = 0.3 + Math.random() * 0.7; // Entre 30% et 100% du rayon maximum
-  const maxRadius = 350; // Rayon maximum pour la distribution
+  const maxRadius = 500; // Rayon maximum pour la distribution
   const radius = maxRadius * radiusFactor;
 
   // Conversion des coordonnées polaires en coordonnées cartésiennes
