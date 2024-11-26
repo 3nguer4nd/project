@@ -4,33 +4,115 @@ import { motion } from 'framer-motion';
 interface Skill {
   name: string;
   level: number;
-  category: string;
+  description: string;
   color: string;
 }
 
 const skills: Skill[] = [
-  { name: 'React', level: 90, category: 'Frontend', color: 'bg-blue-400' },
-  { name: 'TypeScript', level: 85, category: 'Languages', color: 'bg-indigo-400' },
-  { name: 'Node.js', level: 80, category: 'Backend', color: 'bg-green-400' },
-  { name: 'Python', level: 75, category: 'Languages', color: 'bg-yellow-400' },
-  { name: 'AWS', level: 70, category: 'Cloud', color: 'bg-orange-400' },
-  { name: 'Docker', level: 65, category: 'DevOps', color: 'bg-purple-400' },
-  { name: 'GraphQL', level: 60, category: 'Backend', color: 'bg-pink-400' },
-  { name: 'Figma', level: 55, category: 'Design', color: 'bg-red-400' },
+  { 
+    name: 'React', 
+    level: 90, 
+    description: 'Building user interfaces',
+    color: 'bg-blue-400' 
+  },
+  { 
+    name: 'HTML/CSS', 
+    level: 85, 
+    description: 'Structure and styling',
+    color: 'bg-orange-400' 
+  },
+  { 
+    name: 'Tailwind', 
+    level: 80, 
+    description: 'Utility-first CSS',
+    color: 'bg-teal-400' 
+  },
+  { 
+    name: 'Node.js', 
+    level: 80, 
+    description: 'Server-side JavaScript',
+    color: 'bg-green-400' 
+  },
+  { 
+    name: 'Express', 
+    level: 75, 
+    description: 'Web framework',
+    color: 'bg-gray-400' 
+  },
+  { 
+    name: 'MongoDB', 
+    level: 70, 
+    description: 'NoSQL database',
+    color: 'bg-green-600' 
+  },
+  { 
+    name: 'TypeScript', 
+    level: 85, 
+    description: 'Typed JavaScript',
+    color: 'bg-indigo-400' 
+  },
+  { 
+    name: 'Python', 
+    level: 75, 
+    description: 'General-purpose language',
+    color: 'bg-yellow-400' 
+  },
+  { 
+    name: 'Git', 
+    level: 85, 
+    description: 'Version control',
+    color: 'bg-red-400' 
+  },
+  { 
+    name: 'Docker', 
+    level: 65, 
+    description: 'Containerization',
+    color: 'bg-blue-600' 
+  },
+  { 
+    name: 'AWS', 
+    level: 70, 
+    description: 'Cloud services',
+    color: 'bg-yellow-600' 
+  }
 ];
 
-const SkillBubble: React.FC<{ skill: Skill }> = ({ skill }) => {
-  // Calculate size based on skill level (min 100px, max 160px)
+const getRandomPosition = (index: number) => {
+  const angle = (index * 137.5) % 360; // Angle d'or pour une distribution uniforme
+  const radius = 150 + (index % 4) * 50; // Plus grande variation du rayon pour plus d'espace
+  
+  return {
+    x: Math.cos(angle * Math.PI / 180) * radius,
+    y: Math.sin(angle * Math.PI / 180) * radius
+  };
+};
+
+const SkillBubble: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) => {
   const size = 100 + (skill.level / 100) * 60;
+  const position = getRandomPosition(index);
 
   return (
     <motion.div
-      initial={{ scale: 0, opacity: 0 }}
-      whileInView={{ scale: 1, opacity: 1 }}
+      initial={{ scale: 0, opacity: 0, x: position.x * 2, y: position.y * 2 }}
+      whileInView={{ 
+        scale: 1, 
+        opacity: 1, 
+        x: position.x, 
+        y: position.y,
+        transition: { 
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          delay: index * 0.1
+        }
+      }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.1 }}
-      className={`relative rounded-full ${skill.color} cursor-pointer`}
+      whileHover={{ 
+        scale: 1.1,
+        zIndex: 10,
+        transition: { duration: 0.2 }
+      }}
+      className={`absolute rounded-full ${skill.color} cursor-pointer group shadow-lg`}
       style={{
         width: `${size}px`,
         height: `${size}px`,
@@ -39,15 +121,15 @@ const SkillBubble: React.FC<{ skill: Skill }> = ({ skill }) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
         <span className="font-bold text-center whitespace-nowrap">{skill.name}</span>
         <span className="text-sm opacity-90">{skill.level}%</span>
-        <span className="text-xs opacity-75">{skill.category}</span>
+        <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-center">
+          {skill.description}
+        </span>
       </div>
     </motion.div>
   );
 };
 
 export default function Skills() {
-  const categories = Array.from(new Set(skills.map(skill => skill.category)));
-
   return (
     <section className="py-20 bg-gray-50" id="skills">
       <div className="max-w-6xl mx-auto px-4">
@@ -64,19 +146,16 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="space-y-12">
-          {categories.map((category) => (
-            <div key={category} className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">{category}</h3>
-              <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-                {skills
-                  .filter(skill => skill.category === category)
-                  .map(skill => (
-                    <SkillBubble key={skill.name} skill={skill} />
-                  ))}
-              </div>
-            </div>
-          ))}
+        <div className="relative h-[800px] flex items-center justify-center mx-auto">
+          <div className="absolute inset-0 flex items-center justify-center">
+            {skills.map((skill, index) => (
+              <SkillBubble 
+                key={skill.name} 
+                skill={skill} 
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
