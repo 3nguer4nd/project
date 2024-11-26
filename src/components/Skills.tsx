@@ -147,9 +147,7 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4">Skills & Expertise</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
-          </p>
+          
         </motion.div>
 
         <div className="relative h-[800px] w-full flex items-center justify-center mx-auto">
