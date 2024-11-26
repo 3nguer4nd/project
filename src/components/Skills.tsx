@@ -23,7 +23,7 @@ const skills: Skill[] = [
   },
   { 
     name: 'Tailwind', 
-    level: 80, 
+    // level: 80, 
     description: 'Utility-first CSS',
     color: 'bg-teal-400' 
   },
