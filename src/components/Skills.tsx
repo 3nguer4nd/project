@@ -152,7 +152,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="relative h-[900px] w-full flex items-center justify-center mx-auto">
+        <div className="relative h-[700px] w-full flex items-center justify-center mx-auto">
           <div className="absolute inset-0 flex items-center justify-center">
             {skills.map((skill, index) => (
               <SkillBubble 
