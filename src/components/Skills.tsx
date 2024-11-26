@@ -23,7 +23,7 @@ const skills: Skill[] = [
   },
   { 
     name: 'Tailwind', 
-    // level: 80, 
+    level: 80, 
     description: 'Utility-first CSS',
     color: 'bg-teal-400' 
   },
@@ -78,24 +78,18 @@ const skills: Skill[] = [
 ];
 
 const getRandomPosition = (index: number) => {
-  // Utilisation d'une grille virtuelle pour mieux répartir les bulles
-  const gridSize = Math.ceil(Math.sqrt(skills.length));
-  const cellSize = 200; // Taille de chaque cellule de la grille
+  // Utilisation d'angles aléatoires pour une distribution circulaire
+  const angle = (index / skills.length) * 2 * Math.PI + (Math.random() - 0.5);
+  
+  // Rayon variable pour créer plusieurs "orbites"
+  const radiusFactor = 0.3 + Math.random() * 0.7; // Entre 30% et 100% du rayon maximum
+  const maxRadius = 350; // Rayon maximum pour la distribution
+  const radius = maxRadius * radiusFactor;
 
-  // Position de base dans la grille
-  const row = Math.floor(index / gridSize);
-  const col = index % gridSize;
-
-  // Ajout d'une variation aléatoire à la position
-  const randomOffset = () => (Math.random() - 0.5) * 150;
-
-  // Calcul de la position finale avec décalage aléatoire
-  const baseX = (col - gridSize / 2) * cellSize;
-  const baseY = (row - gridSize / 2) * cellSize;
-
+  // Conversion des coordonnées polaires en coordonnées cartésiennes
   return {
-    x: baseX + randomOffset(),
-    y: baseY + randomOffset()
+    x: Math.cos(angle) * radius + (Math.random() - 0.5) * 100,
+    y: Math.sin(angle) * radius + (Math.random() - 0.5) * 100
   };
 };
 
@@ -144,7 +138,7 @@ const SkillBubble: React.FC<{ skill: Skill; index: number }> = ({ skill, index }
 export default function Skills() {
   return (
     <section className="py-20 bg-gray-50" id="skills">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +152,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="relative h-[800px] flex items-center justify-center mx-auto">
+        <div className="relative h-[900px] w-full flex items-center justify-center mx-auto">
           <div className="absolute inset-0 flex items-center justify-center">
             {skills.map((skill, index) => (
               <SkillBubble 
