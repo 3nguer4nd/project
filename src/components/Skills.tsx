@@ -78,12 +78,24 @@ const skills: Skill[] = [
 ];
 
 const getRandomPosition = (index: number) => {
-  const angle = (index * 137.5) % 360; // Angle d'or pour une distribution uniforme
-  const radius = 150 + (index % 4) * 50; // Plus grande variation du rayon pour plus d'espace
-  
+  // Utilisation d'une grille virtuelle pour mieux répartir les bulles
+  const gridSize = Math.ceil(Math.sqrt(skills.length));
+  const cellSize = 200; // Taille de chaque cellule de la grille
+
+  // Position de base dans la grille
+  const row = Math.floor(index / gridSize);
+  const col = index % gridSize;
+
+  // Ajout d'une variation aléatoire à la position
+  const randomOffset = () => (Math.random() - 0.5) * 150;
+
+  // Calcul de la position finale avec décalage aléatoire
+  const baseX = (col - gridSize / 2) * cellSize;
+  const baseY = (row - gridSize / 2) * cellSize;
+
   return {
-    x: Math.cos(angle * Math.PI / 180) * radius,
-    y: Math.sin(angle * Math.PI / 180) * radius
+    x: baseX + randomOffset(),
+    y: baseY + randomOffset()
   };
 };
 
