@@ -32,14 +32,14 @@ export default function Contact() {
               <Mail className="w-6 h-6 text-blue-500" />
               <div>
                 <h3 className="font-medium">Email</h3>
-                <p className="text-gray-600">enguerand.ca@gmail.com</p>
+                <p className="text-gray-600">anguerant@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <Phone className="w-6 h-6 text-blue-500" />
               <div>
                 <h3 className="font-medium">Phone</h3>
-                <p className="text-gray-600">06 62 38 50 62</p>
+                <p className="text-gray-600">06 xx xx xx xx</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
