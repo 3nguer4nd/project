@@ -15,7 +15,7 @@ export default function Hero() {
           Hi, I'am <span className="text-blue-400">Enguérand CA</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8">
-        Work-study student in BTS SIO, SISR option
+        Work-study student ion BTS SIO, SISR option
         </p>
         
         <div className="flex gap-6 justify-center mb-12">
