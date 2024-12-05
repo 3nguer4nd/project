@@ -42,7 +42,7 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="mailto:enguerand.ca@gmail.com"
+            href="mailto:engu*****@gmail.com"
             className="text-gray-300 hover:text-white transition-colors"
           >
             <Mail size={24} />
